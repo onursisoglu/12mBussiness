@@ -1,0 +1,19 @@
+﻿create proc stok
+(
+	@malKodu nvarchar(30),
+	@baslangicTarihi int,
+	@bitisTarihi int
+	
+	
+)
+as
+begin
+			select ID, case when(IslemTur=0 ) then 'Giris'  when(IslemTur=1 ) then 'Cıkış' end as IslemTur,
+			EvrakNo,CONVERT(varchar(15),CAST(Tarih - 2 as datetime),104) Tarih,
+			case when (IslemTur=1) then '0' else Miktar end as GirisMiktar  ,
+			case when (IslemTur=0) then '0' else Miktar end as CikisMiktar
+			from STI
+			where MalKodu = @malKodu and  (Tarih >=@baslangicTarihi and Tarih<= @bitisTarihi)
+			
+
+end
