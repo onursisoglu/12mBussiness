@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnikiMBussiness", "OnikiMBussiness\OnikiMBussiness.csproj", "{DD9EFB54-C403-4E14-9AC1-413CFFCB0BA9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DevExtreme NuGet.config", "DevExtreme NuGet.config", "{56026277-0A0B-405F-A3CC-6EFBC2B1451B}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet.config = NuGet.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD9EFB54-C403-4E14-9AC1-413CFFCB0BA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD9EFB54-C403-4E14-9AC1-413CFFCB0BA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD9EFB54-C403-4E14-9AC1-413CFFCB0BA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD9EFB54-C403-4E14-9AC1-413CFFCB0BA9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2CA5E7C4-B2B8-4383-9A75-3271961ADD69}
+	EndGlobalSection
+EndGlobal

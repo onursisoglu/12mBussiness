@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+    <form action="" method="post">
+
+        <div class="form-group">
+            <label>Başlangıç Tarihi</label>
+            <input type="datetime" id="startdate" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Bitiş Tarihi</label>
+            <input type="datetime" class="form-control"  id="enddate"/>
+        </div>
+
+
+        <div class="form-group">
+            <label>Mal kodu - mal adi </label>
+            <input type="text" name="malkodu" id="malkodu" class="form-control" />
+        </div>
+        <input type="button" value="Getir" id="btnGetir" />
+    </form>
+
+
+      <div>
+          <table class="table">
+              <thead>
+                  <tr>
+                      <th>ID</th>
+                      <th>İslem Türü</th>
+                      <th>Evrak No</th>
+                      <th>Tarih</th>
+                      <th>Giriş Miktarı </th>
+                      <th>Çıkış Miktarı</th>
+                      <th>Stok Miktarı</th>
+                  </tr>
+              </thead>
+              <tbody id="result">
+                  
+              </tbody>
+          </table>
+      </div>
+
+     
+
+
+@section Scripts{ 
+
+<script>
+    $('#btnGetir').on('click',function () {
+        debugger
+        var malkodu = $('#malkodu').val();
+        var startDate = $('#startdate').val();
+        var endDate = $('#enddate').val();
+
+        $.ajax(
+            {
+                url: '/Home/GetProduct',
+                data: { value: malkodu, baslangic: startDate, bitis: endDate },
+                type: 'get',
+                success: function (result) {
+                    $('#result').html('');
+                    $.each(result, function (i, v) {
+                        $('#result').append(`<tr>
+                      <td>`+v.ID+`</td>
+                      <td>`+v.IslemTur+`</td>
+                      <td>`+v.EvrakNo+`</td>
+                      <td>`+v.Tarih+`</td>
+                      <td>`+v.GirisMiktar+`</td>
+                      <td>`+v.CikisMiktar+`</td>
+                      <td>`+v.StokMiktar+`</td>
+                  </tr>`)
+                    })
+                }
+            })
+    })
+</script>
+}
+

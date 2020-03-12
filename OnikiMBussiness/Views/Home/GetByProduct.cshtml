@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "GetByProduct";
+}
+
+<h1>GetByProduct</h1>
+
+@(Html.DevExtreme().DataGrid<OnikiMBussiness.Models.spModel>()
+    .DataSource(ds => ds.Mvc()
+        .Controller("Home")
+        .LoadAction("GetProduct")
+        .Key("ID")
+    )
+    .RemoteOperations(true)
+    .Columns(columns => {
+
+        columns.AddFor(m => m.ID);
+
+        columns.AddFor(m => m.IslemTur);
+
+        columns.AddFor(m => m.EvrakNo);
+
+        columns.AddFor(m => m.Tarih);
+
+        columns.AddFor(m => m.GirisMiktar);
+
+        columns.AddFor(m => m.CikisMiktar);
+
+        columns.AddFor(m => m.StokMiktar);
+    })
+)
